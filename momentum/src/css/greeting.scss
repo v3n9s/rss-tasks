@@ -1,0 +1,16 @@
+.greeting{
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+
+  &__phrase{
+    width: 50%;
+    text-align: right;
+    font-size: 40px;
+  }
+
+  &__name{
+    width: 50%;
+    font-size: 40px;
+  }
+}
