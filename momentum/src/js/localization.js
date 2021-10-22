@@ -4,8 +4,8 @@ class Localization{
     this.currentLocale = this.supportedLocales.includes(navigator.language.slice(0,2)) ? navigator.language.slice(0,2) : 'en';
   }
   changeLocaleTo(localeTag){
-    this.currentLocale = localeTag;
-    document.dispatchEvent(new CustomEvent('localechange'))
+    this.currentLocale = this.supportedLocales.includes(localeTag) ? localeTag : 'en';
+    document.dispatchEvent(new CustomEvent('localechange'));
   }
 }
 
