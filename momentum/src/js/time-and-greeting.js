@@ -10,8 +10,8 @@ export class TimeAndGreeting{
     'be': ['Студзень', 'Люты', 'Сакавік', 'Красавік', 'Травень', 'Чэрвень', 'Ліпень', 'Жнівень', 'Верасень', 'Кастрычнік', 'Лістапад', 'Снежань']
   }
   greetingPhrases = {
-    'en': ['Good morning', 'Good afternoon', 'Good evening', 'Good night'],
-    'be': ['Добрай раніцы', 'Добры дзень', 'Добры вечар', 'Дабранач']
+    'en': ['Good night', 'Good morning', 'Good afternoon', 'Good evening'],
+    'be': ['Дабранач', 'Добрай раніцы', 'Добры дзень', 'Добры вечар']
   }
   namePlaceholder = {
     'en': 'Enter your name',
@@ -47,9 +47,13 @@ export class TimeAndGreeting{
     this.indicators.time.textContent = date.toLocaleTimeString(localization.currentLocale, {hour12: this.is12Hour});
     this.indicators.date.textContent = `${this.dayNames[localization.currentLocale][date.getDay()]}, ${this.monthNames[localization.currentLocale][date.getMonth()]} ${date.getDate()}`;
 
-    if(date.getHours() >= 18) this.indicators.greetingPhrase.textContent = this.greetingPhrases[localization.currentLocale][2];
-    else if(date.getHours() >= 12) this.indicators.greetingPhrase.textContent = this.greetingPhrases[localization.currentLocale][1];
-    else if(date.getHours() >= 6) this.indicators.greetingPhrase.textContent = this.greetingPhrases[localization.currentLocale][0];
-    else if(date.getHours() >= 0) this.indicators.greetingPhrase.textContent = this.greetingPhrases[localization.currentLocale][3];
+    this.indicators.greetingPhrase.textContent = this.greetingPhrases[localization.currentLocale][getDayQuarter(date)];
   }
+}
+
+export function getDayQuarter(date){
+  if(date.getHours() >= 18) return 3;
+  else if(date.getHours() >= 12) return 2;
+  else if(date.getHours() >= 6) return 1;
+  else if(date.getHours() >= 0) return 0;
 }
