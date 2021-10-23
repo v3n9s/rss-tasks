@@ -12,5 +12,16 @@
   &__name{
     width: 50%;
     font-size: 40px;
+    color: #fff;
+
+    &::-webkit-input-placeholder{
+      color: #fff;
+      opacity: 0.75;
+      transition: opacity 0.25s ease;
+    }
+
+    &:focus::-webkit-input-placeholder{
+      opacity: 0;
+    }
   }
 }
