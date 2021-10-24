@@ -1,6 +1,6 @@
 import {getDayQuarter} from './time-and-greeting.js';
 
-export class BackgroundImage{
+class BackgroundImage{
   isBusy = false;
   dayQuarterNames = ['night', 'morning', 'afternoon', 'evening']
   constructor({indicators, controls}){
@@ -44,3 +44,14 @@ export class BackgroundImage{
     this.currentSlideInd = slideInd;
   }
 }
+
+export const backgroundImage = new BackgroundImage({
+  indicators: {
+    sliderContainer: document.querySelector('#slider-container'),
+    sliderImage: document.querySelector('#slider-image')
+  },
+  controls: {
+    prev: document.querySelector('#slider-controls-prev'),
+    next: document.querySelector('#slider-controls-next')
+  }
+})

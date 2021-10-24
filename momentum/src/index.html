@@ -27,5 +27,24 @@
       <img src="./assets/svg/slider-next.svg" alt="slider next">
     </div>
   </div>
+  <div class="settings">
+    <input class="settings__input-toggle" id="settings-menu-toggle" type="checkbox">
+    <label class="settings__icon" for="settings-menu-toggle"></label>
+    <label class="settings__overlay" for="settings-menu-toggle"></label>
+    <div class="settings-menu">
+      <div class="settings-menu__single-select" id="localization-select">
+        <input class="settings-menu__input" id="localization-be" value="be" type="radio" name="localization">
+        <label class="settings-menu__label" for="localization-be">BE</label>
+        <input class="settings-menu__input" id="localization-en" value="en" type="radio" name="localization">
+        <label class="settings-menu__label" for="localization-en">EN</label>
+      </div>
+      <div class="settings-menu__single-select" id="clock-system-select">
+        <input class="settings-menu__input" id="clock-system-24" value="false" type="radio" name="clock-system">
+        <label class="settings-menu__label" for="clock-system-24">24 Hours</label>
+        <input class="settings-menu__input" id="clock-system-12" value="true" type="radio" name="clock-system">
+        <label class="settings-menu__label" for="clock-system-12">12 Hours</label>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
