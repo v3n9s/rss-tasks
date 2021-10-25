@@ -27,6 +27,25 @@
       <img src="./assets/svg/slider-next.svg" alt="slider next">
     </div>
   </div>
+  <div class="quotes">
+    <input class="quotes__checkbox" id="quotes-modal" type="checkbox">
+    <div class="quotes__container">
+      <div class="quotes__controls">
+        <label for="quotes-modal">
+          <img class="quotes__icon" id="quote-list" src="./assets/svg/list-ol.svg" alt="list" draggable="false">
+        </label>
+        <img class="quotes__icon" id="quote-reload" src="./assets/svg/reload.svg" alt="refresh" draggable="false">
+        <img class="quotes__icon" id="quote-like" src="./assets/svg/plus-lg.svg" alt="plus" draggable="false">
+        <img class="quotes__icon" id="quote-check" src="./assets/svg/check-lg.svg" alt="check" draggable="false">
+      </div>
+      <div class="quotes__text" id="quote-text"></div>
+      <div class="quotes__author" id="quote-author"></div>
+    </div>
+    <label class="quotes__overlay" for="quotes-modal"></label>
+    <div class="quotes__modal">
+      <div class="quotes-list"></div>
+    </div>
+  </div>
   <div class="weather">
     <input class="weather__input" id="weather-input" type="text" placeholder="[Enter your city]">
     <div class="weather__info-container">

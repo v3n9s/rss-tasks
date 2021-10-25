@@ -1,0 +1,130 @@
+.quotes{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+
+  & > *{
+    pointer-events: all;
+  }
+
+  &__container{
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 400px;
+    color: #fff;
+  }
+
+  &__controls{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    pointer-events: all;
+  }
+
+  &__icon{
+    width: 32px;
+    height: 32px;
+
+    &:hover{
+      cursor: pointer;
+    }
+  }
+
+  &__text{
+    font-size: 16px;
+    flex: 0 0 60px;
+    text-align: center;
+  }
+
+  &__author{
+    font-size: 24px;
+  }
+
+  &__checkbox{
+    display: none;
+  }
+
+  &__modal{
+    position: absolute;
+    top: -400px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+    width: 600px;
+    min-height: 400px;
+    max-height: 800px;
+    padding: 10px;
+    background-color: rgba(10, 10, 10, 0.9);
+    opacity: 0;
+    overflow-y: auto;
+    transition: top 0.5s ease, opacity 0.5s ease;
+
+    .quotes__checkbox:checked ~ &{
+      top: 50px;
+      opacity: 1;
+    }
+  }
+
+  &__overlay{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 4;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(10, 10, 10);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+
+    .quotes__checkbox:checked ~ &{
+      pointer-events: all;
+      opacity: 0.25;
+    }
+  }
+}
+
+.quotes-list{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  list-style: none;
+  color: #fff;
+
+  &__item{
+    margin: 5px 0px 0px 0px;
+    display: flex;
+    align-items: center;
+    padding: 0px 0px 5px 0px;
+    gap: 5px;
+    border-bottom: 1px solid #fff;
+
+    &:last-of-type{
+      border: 0px;
+    }
+  }
+
+  &__author{
+    font-size: 18px;
+    min-width: 160px;
+  }
+
+  &__text{
+    font-size: 18px;
+  }
+
+  &__delete{
+    width: 28px;
+    height: 28px;
+  }
+}
