@@ -37,8 +37,8 @@ class ModuleToggle{
   localeChanged(){
     this.indicators['lang-be'].textContent = this.locales[localization.currentLocale]['belarusian'];
     this.indicators['lang-en'].textContent = this.locales[localization.currentLocale]['english'];
-    this.indicators['clock-system-24'].textContent = this.locales[localization.currentLocale]['12hours'];
-    this.indicators['clock-system-12'].textContent = this.locales[localization.currentLocale]['24hours'];
+    this.indicators['clock-system-24'].textContent = this.locales[localization.currentLocale]['24hours'];
+    this.indicators['clock-system-12'].textContent = this.locales[localization.currentLocale]['12hours'];
     this.indicators['datetime-and-greeting'].textContent = this.locales[localization.currentLocale]['datetime-and-greeting'];
     this.indicators['quotes'].textContent = this.locales[localization.currentLocale]['quotes'];
     this.indicators['audio-player'].textContent = this.locales[localization.currentLocale]['audio-player'];
