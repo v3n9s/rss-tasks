@@ -1,0 +1,47 @@
+.audio-player{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 175px;
+}
+
+.audio-player-controls{
+  display: flex;
+  justify-content: space-between;
+  &__icon{
+    width: 48px;
+    height: 48px;
+
+    &:hover{
+      cursor: pointer;
+    }
+  }
+}
+
+.play-list{
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  color: #fff;
+
+  &__item{
+    padding: 2px 0px 2px 25px;
+    transition: filter 0.25s ease;
+
+    &:hover{
+      cursor: pointer;
+    }
+
+    &::before{
+      content: "";
+      position: absolute;
+      left: 0px;
+      transform: translateY(-2px);
+      width: 20px;
+      height: 20px;
+      background-image: url('../assets/svg/play.svg');
+      background-size: cover;
+    }
+  }
+}
