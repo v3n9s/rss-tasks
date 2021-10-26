@@ -92,10 +92,10 @@ class AudioPlayer{
     })
     document.querySelectorAll('.play-list__play-pause').forEach((elem, ind) => {
       if(ind === this.currTrackInd && !this.isPaused){
-        elem.style.backgroundImage = 'url("../assets/svg/pause.svg")';
+        elem.style.backgroundImage = 'url("./assets/svg/pause.svg")';
       }
       else{
-        elem.style.backgroundImage = 'url("../assets/svg/play.svg")';
+        elem.style.backgroundImage = 'url("./assets/svg/play.svg")';
       }
     })
   }
