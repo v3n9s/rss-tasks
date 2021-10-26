@@ -10,6 +10,7 @@
   <div class="slider__container" id="slider-container">
     <img alt="slider photo" class="slider__image" id="slider-image">
   </div>
+  <input class="toggle-modules__checkbox" type="checkbox" id="datetime-and-greeting-toggle" checked>
   <div class="datetime-and-greeting">
     <div class="datetime">
       <time class="datetime__time" id="time-indicator"></time>
@@ -28,6 +29,7 @@
       <img src="./assets/svg/slider-next.svg" alt="slider next">
     </div>
   </div>
+  <input class="toggle-modules__checkbox" type="checkbox" id="quotes-toggle" checked>
   <div class="quotes">
     <input class="quotes__checkbox" id="quotes-modal" type="checkbox">
     <div class="quotes__container">
@@ -47,6 +49,7 @@
       <div class="quotes-list"></div>
     </div>
   </div>
+  <input class="toggle-modules__checkbox" type="checkbox" id="audio-player-toggle" checked>
   <div class="audio-player">
     <audio class="audio-player__audio"></audio>
     <div class="audio-player__name" id="audio-player-name"></div>
@@ -65,6 +68,7 @@
     </div>
     <ul class="play-list"></ul>
   </div>
+  <input class="toggle-modules__checkbox" type="checkbox" id="weather-toggle" checked>
   <div class="weather">
     <input class="weather__input" id="weather-input" type="text" placeholder="[Enter your city]">
     <div class="weather__info-container">
@@ -85,16 +89,20 @@
     <div class="settings-menu">
       <div class="settings-menu__single-select" id="localization-select">
         <input class="settings-menu__input" id="localization-be" value="be" type="radio" name="localization">
-        <label class="settings-menu__label" for="localization-be">BE</label>
+        <label class="settings-menu__label" id="localization-be-label" for="localization-be">BE</label>
         <input class="settings-menu__input" id="localization-en" value="en" type="radio" name="localization">
-        <label class="settings-menu__label" for="localization-en">EN</label>
+        <label class="settings-menu__label" id="localization-en-label" for="localization-en">EN</label>
       </div>
       <div class="settings-menu__single-select" id="clock-system-select">
         <input class="settings-menu__input" id="clock-system-24" value="false" type="radio" name="clock-system">
-        <label class="settings-menu__label" for="clock-system-24">24 Hours</label>
+        <label class="settings-menu__label" id="clock-system-24-label" for="clock-system-24">24 Hours</label>
         <input class="settings-menu__input" id="clock-system-12" value="true" type="radio" name="clock-system">
-        <label class="settings-menu__label" for="clock-system-12">12 Hours</label>
+        <label class="settings-menu__label" id="clock-system-12-label" for="clock-system-12">12 Hours</label>
       </div>
+      <label class="settings-menu__module-label" id="datetime-and-greeting-toggle-label" for="datetime-and-greeting-toggle"></label>
+      <label class="settings-menu__module-label" id="quotes-toggle-label" for="quotes-toggle"></label>
+      <label class="settings-menu__module-label" id="audio-player-toggle-label" for="audio-player-toggle"></label>
+      <label class="settings-menu__module-label" id="weather-toggle-label" for="weather-toggle"></label>
     </div>
   </div>
   <script>
@@ -106,8 +114,8 @@
       'Виджет цитата дня': 10,
       'Аудиоплеер': 15,
       'Продвинутый аудиоплеер': 20,
-      'Перевод приложения на 2 языка': 9,
-      'Настройки приложения': 8,
+      'Перевод приложения на 2 языка': 12,
+      'Настройки приложения': 14,
       'Дополнительный функционал': 10
     }
     console.log(mark);

@@ -3,6 +3,7 @@ import {localization} from './localization.js';
 class Weather{
   locales = {
     'en': {
+      placeholder: 'Enter your city',
       emptyInput: 'Enter city above',
       cityNotFound: 'City not found',
       city: 'Minsk',
@@ -12,6 +13,7 @@ class Weather{
       humidity: 'Humidity'
     },
     'be': {
+      placeholder: 'Увядзіце ваш горад',
       emptyInput: 'Увядзіце горад',
       cityNotFound: 'Горад не знойдзены',
       city: 'Мінск',
@@ -45,6 +47,7 @@ class Weather{
       city = localStorage.getItem('weather-city');
     }
     if(city === 'Мінск' || city === 'Менск') city = 'Minsk';
+    this.controls.input.placeholder = `[${this.locales[localization.currentLocale].placeholder}]`;
     const weatherInfo = await (await fetch(`https://api.openweathermap.org/data/2.5/weather?appid=a67c0757948afec45a256abdb27cb162&q=${city}&lang=${localization.currentLocale}&units=metric`)).json();
     this.indicators.forecast.style.display = 'none';
     this.indicators.weatherError.style.display = 'none';

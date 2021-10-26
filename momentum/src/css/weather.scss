@@ -2,7 +2,15 @@
   position: absolute;
   top: 10px;
   right: 10px;
-  width: 250px;
+  width: 300px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+
+  #weather-toggle:checked ~ &{
+    opacity: 1;
+    pointer-events: all;
+  }
 
   &__input{
     padding-left: 2px;
@@ -28,7 +36,7 @@
     display: flex;
     flex-direction: column;
     gap: 5px;
-    font-size: 20px;
+    font-size: 24px;
     color: #fff;
   }
 

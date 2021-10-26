@@ -6,3 +6,4 @@ import {localization} from './localization.js';
 import {weather} from './weather.js';
 import {quotes} from './quotes.js';
 import {audioPlayer} from './audio-player.js';
+import {moduleToggle} from './module-toggle.js';

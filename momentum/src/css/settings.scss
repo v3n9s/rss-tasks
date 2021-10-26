@@ -78,7 +78,7 @@
 
   &__label{
     display: flex;
-    flex: 1 1 auto;
+    flex: 1 1 1px;
     justify-content: center;
     align-items: center;
     height: 30px;
@@ -93,4 +93,35 @@
       cursor: pointer;
     }
   }
+
+  &__module-label{
+    display: flex;
+    flex: 1 1 auto;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    color: #fff;
+    border: 1px solid #5A90FF;
+    transition: background-color 0.2s ease;
+
+    &:hover{
+      cursor: pointer;
+    }
+  }
+}
+
+#datetime-and-greeting-toggle:checked ~ .settings #datetime-and-greeting-toggle-label{
+  background-color: #5A90FF;
+}
+
+#quotes-toggle:checked ~ .settings #quotes-toggle-label{
+  background-color: #5A90FF;
+}
+
+#audio-player-toggle:checked ~ .settings #audio-player-toggle-label{
+  background-color: #5A90FF;
+}
+
+#weather-toggle:checked ~ .settings #weather-toggle-label{
+  background-color: #5A90FF;
 }
