@@ -3,6 +3,41 @@
   top: 10px;
   left: 10px;
   width: 175px;
+
+  &__name{
+    text-align: center;
+    font-size: 20px;
+    color: #fff;
+  }
+
+  &__progress{
+    width: 100%;
+  }
+
+  &__time{
+    text-align: center;
+    font-size: 18px;
+    color: #fff;
+  }
+
+  &__volume{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  &__volume-toggle{
+    width: 32px;
+    height: 32px;
+
+    &:hover{
+      cursor: pointer;
+    }
+  }
+
+  &__volume-level{
+    flex-grow: 1;
+  }
 }
 
 .audio-player-controls{
@@ -32,16 +67,16 @@
     &:hover{
       cursor: pointer;
     }
+  }
 
-    &::before{
-      content: "";
-      position: absolute;
-      left: 0px;
-      transform: translateY(-2px);
-      width: 20px;
-      height: 20px;
-      background-image: url('../assets/svg/play.svg');
-      background-size: cover;
-    }
+  &__play-pause{
+    position: absolute;
+    left: 0px;
+    transform: translateY(-2px);
+    width: 20px;
+    height: 20px;
+    background-image: url("../assets/svg/play.svg");
+    background-size: cover;
+    pointer-events: none;
   }
 }
