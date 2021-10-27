@@ -2,6 +2,14 @@
   display: flex;
   justify-content: center;
   gap: 15px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+
+  #greeting-toggle:checked ~ .datetime-and-greeting &{
+    opacity: 1;
+    pointer-events: all;
+  }
 
   &__phrase{
     width: 50%;

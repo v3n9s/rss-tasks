@@ -7,7 +7,9 @@ class ModuleToggle{
       'belarusian': 'Belarusian',
       '12hours': '12 Hours',
       '24hours': '24 Hours',
-      'datetime-and-greeting': 'Calendar and greeting',
+      'time': 'Clocks',
+      'date': 'Calendar',
+      'greeting': 'Greeting',
       'quotes': 'Quotes',
       'audio-player': 'Audio player',
       'weather': 'Weather forecast'
@@ -17,7 +19,9 @@ class ModuleToggle{
       'belarusian': 'Беларуская',
       '12hours': '12 гадзін',
       '24hours': '24 гадзіны',
-      'datetime-and-greeting': 'Каляндар і прывітанне',
+      'time': 'Гадзіннік',
+      'date': 'Каляндар',
+      'greeting': 'Прывітанне',
       'quotes': 'Цытаты',
       'audio-player': 'Аўдыяплэер',
       'weather': 'Прагноз надвор\'я'
@@ -27,11 +31,8 @@ class ModuleToggle{
     this.controls = controls;
     this.indicators = indicators;
     document.addEventListener('localechange', () => this.localeChanged());
-    Object.values(this.controls).forEach((checkbox) => checkbox.addEventListener('change', () => this.saveModulesState()));
-    this.controls['datetime-and-greeting'].checked = JSON.parse(localStorage.getItem('datetime-and-greeting')) ?? true;
-    this.controls['quotes'].checked = JSON.parse(localStorage.getItem('quotes')) ?? true;
-    this.controls['audio-player'].checked = JSON.parse(localStorage.getItem('audio-player')) ?? true;
-    this.controls['weather'].checked = JSON.parse(localStorage.getItem('weather')) ?? true;
+    Object.entries(this.controls).forEach((property) => property[1].addEventListener('change', () => this.saveModulesState(property[0], property[1].checked)));
+    Object.entries(this.controls).forEach((property) => property[1].checked = JSON.parse(localStorage.getItem(property[0])) ?? true);
     this.localeChanged();
   }
   localeChanged(){
@@ -39,22 +40,23 @@ class ModuleToggle{
     this.indicators['lang-en'].textContent = this.locales[localization.currentLocale]['english'];
     this.indicators['clock-system-24'].textContent = this.locales[localization.currentLocale]['24hours'];
     this.indicators['clock-system-12'].textContent = this.locales[localization.currentLocale]['12hours'];
-    this.indicators['datetime-and-greeting'].textContent = this.locales[localization.currentLocale]['datetime-and-greeting'];
+    this.indicators['time'].textContent = this.locales[localization.currentLocale]['time'];
+    this.indicators['date'].textContent = this.locales[localization.currentLocale]['date'];
+    this.indicators['greeting'].textContent = this.locales[localization.currentLocale]['greeting'];
     this.indicators['quotes'].textContent = this.locales[localization.currentLocale]['quotes'];
     this.indicators['audio-player'].textContent = this.locales[localization.currentLocale]['audio-player'];
     this.indicators['weather'].textContent = this.locales[localization.currentLocale]['weather'];
   }
-  saveModulesState(){
-    localStorage.setItem('datetime-and-greeting', this.controls['datetime-and-greeting'].checked);
-    localStorage.setItem('quotes', this.controls['quotes'].checked);
-    localStorage.setItem('audio-player', this.controls['audio-player'].checked);
-    localStorage.setItem('weather', this.controls['weather'].checked);
+  saveModulesState(name, isVisible){
+    localStorage.setItem(name, isVisible);
   }
 }
 
 export const moduleToggle = new ModuleToggle({
   controls: {
-    'datetime-and-greeting': document.querySelector('#datetime-and-greeting-toggle'),
+    'time': document.querySelector('#time-toggle'),
+    'date': document.querySelector('#date-toggle'),
+    'greeting': document.querySelector('#greeting-toggle'),
     'quotes': document.querySelector('#quotes-toggle'),
     'audio-player': document.querySelector('#audio-player-toggle'),
     'weather': document.querySelector('#weather-toggle')
@@ -64,7 +66,9 @@ export const moduleToggle = new ModuleToggle({
     'lang-en': document.querySelector('#localization-en-label'),
     'clock-system-24': document.querySelector('#clock-system-24-label'),
     'clock-system-12': document.querySelector('#clock-system-12-label'),
-    'datetime-and-greeting': document.querySelector('#datetime-and-greeting-toggle-label'),
+    'time': document.querySelector('#time-toggle-label'),
+    'date': document.querySelector('#date-toggle-label'),
+    'greeting': document.querySelector('#greeting-toggle-label'),
     'quotes': document.querySelector('#quotes-toggle-label'),
     'audio-player': document.querySelector('#audio-player-toggle-label'),
     'weather': document.querySelector('#weather-toggle-label')

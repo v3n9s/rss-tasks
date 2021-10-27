@@ -110,18 +110,11 @@
   }
 }
 
-#datetime-and-greeting-toggle:checked ~ .settings #datetime-and-greeting-toggle-label{
-  background-color: #5A90FF;
-}
-
-#quotes-toggle:checked ~ .settings #quotes-toggle-label{
-  background-color: #5A90FF;
-}
-
-#audio-player-toggle:checked ~ .settings #audio-player-toggle-label{
-  background-color: #5A90FF;
-}
-
+#time-toggle:checked ~ .settings #time-toggle-label,
+#date-toggle:checked ~ .settings #date-toggle-label,
+#greeting-toggle:checked ~ .settings #greeting-toggle-label,
+#quotes-toggle:checked ~ .settings #quotes-toggle-label,
+#audio-player-toggle:checked ~ .settings #audio-player-toggle-label,
 #weather-toggle:checked ~ .settings #weather-toggle-label{
   background-color: #5A90FF;
 }
