@@ -1,0 +1,34 @@
+.footer{
+  &__list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    min-height: 75px;
+    padding: 10px 20px;
+    justify-content: space-between;
+    background-color: #192f2d;
+  }
+
+  &__item{
+    display: flex;
+    flex: 1 1 250px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__link{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  &__text{
+    font-size: 24pt;
+  }
+
+  &__img{
+    height: 50px;
+  }
+}
