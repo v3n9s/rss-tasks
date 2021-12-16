@@ -7,7 +7,31 @@
   <title>Christmas Tree</title>
 </head>
 <body>
-  <main></main>
+  <input class="nav__radio" type="radio" name="view" id="welcome-radio" checked>
+  <input class="nav__radio" type="radio" name="view" id="toys-radio">
+  <input class="nav__radio" type="radio" name="view" id="tree-radio">
+  <header>
+    <nav class="nav">
+      <ul class="nav__list">
+        <li class="nav__item">
+          <label class="nav__label" for="welcome-radio">
+            <img class="nav__img" src="./assets/svg/tree.svg" alt="tree">
+          </label>
+        </li>
+        <li class="nav__item">
+          <label class="nav__label" for="toys-radio">Toys</label>
+        </li>
+        <li class="nav__item">
+          <label class="nav__label" for="tree-radio">Tree</label>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="view" id="welcome">welcome</section>
+    <section class="view" id="toys">toys</section>
+    <section class="view" id="tree">tree</section>
+  </main>
   <footer class="footer">
     <ul class="footer__list">
       <li class="footer__item">
