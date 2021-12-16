@@ -3,6 +3,7 @@ import path from 'path';
 import webpack from 'webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import HTMLWebpackPlugin from 'html-webpack-plugin';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
 
 export default ({ mode }: { mode: 'dev' | undefined }) => {
   const ISDEV = mode === 'dev';
@@ -46,6 +47,14 @@ export default ({ mode }: { mode: 'dev' | undefined }) => {
       }),
       new MiniCssExtractPlugin({
         filename: './styles/[name].css',
+      }),
+      new CopyWebpackPlugin({
+        patterns: [
+          {
+            from: path.resolve(__dirname, './src/assets'),
+            to: path.resolve(__dirname, '../dist/assets'),
+          },
+        ],
       }),
     ],
     resolve: {
