@@ -7,3 +7,22 @@
   font-family: "Neucha";
   src: url("../assets/fonts/Neucha-Regular.ttf");
 }
+
+html,
+body{
+  height: 100%;
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+  font-family: "Roboto";
+}
+
+main{
+  flex: 1 1 auto;
+  background-image: url("../assets/bg.jpg");
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
