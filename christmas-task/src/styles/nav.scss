@@ -10,6 +10,7 @@
 
   &__item{
     height: 100%;
+    transition: filter 0.25s ease;
   }
 
   &__label{
@@ -31,4 +32,10 @@
   &__radio{
     display: none;
   }
+}
+
+#welcome-radio:checked ~ header #welcome-indicator,
+#toys-radio:checked ~ header #toys-indicator,
+#tree-radio:checked ~ header #tree-indicator{
+  filter: drop-shadow(0px 0px 3px #ffffff);
 }
