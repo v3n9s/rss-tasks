@@ -1,0 +1,22 @@
+.toys{
+  display: flex;
+  gap: 25px;
+  height: 100%;
+  padding: 0px 20px;
+  background-color: #192f2ddd;
+
+  &__filters{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 0 0 300px;
+  }
+
+  &__items{
+    display: flex;
+    flex-wrap: wrap;
+    height: fit-content;
+    justify-content: space-between;
+    flex: 1 1 auto;
+  }
+}
