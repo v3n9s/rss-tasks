@@ -1,0 +1,87 @@
+.criteria{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 5px;
+
+  &__title{
+    font-size: 24px;
+    padding: 5px 0px;
+    text-align: center;
+  }
+
+  &__controls{
+    display: flex;
+  }
+
+  &__checkbox{
+    display: none;
+  }
+}
+
+.criteria-control{
+  display: flex;
+  flex: 1 1 1px;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+  filter: brightness(0.3);
+  transition: filter 0.25s ease, transform 0.25s ease;
+
+  &__img{
+    max-height: 50px;
+  }
+
+  &__name{
+    font-size: 12px;
+  }
+
+  &__color{
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+
+    &_white{
+      background-color: white;
+    }
+
+    &_yellow{
+      background-color: yellow;
+    }
+
+    &_red{
+      background-color: red;
+    }
+
+    &_blue{
+      background-color: blue;
+    }
+
+    &_green{
+      background-color: green;
+    }
+  }
+
+  &:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+  }
+}
+
+#shapes .criteria-control{
+  flex-direction: column;
+}
+
+#criteria-bell:checked ~ #indicator-bell,
+#criteria-ball:checked ~ #indicator-ball,
+#criteria-cone:checked ~ #indicator-cone,
+#criteria-snowflake:checked ~ #indicator-snowflake,
+#criteria-toy:checked ~ #indicator-toy,
+
+#criteria-white:checked ~ #indicator-white,
+#criteria-yellow:checked ~ #indicator-yellow,
+#criteria-red:checked ~ #indicator-red,
+#criteria-blue:checked ~ #indicator-blue,
+#criteria-green:checked ~ #indicator-green{
+  filter: brightness(1);
+}

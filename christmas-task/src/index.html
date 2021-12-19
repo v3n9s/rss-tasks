@@ -41,7 +41,63 @@
     </section>
     <section class="view" id="toys">
       <div class="toys">
-        <div class="toys__filters"></div>
+        <div class="toys__filters">
+          <div class="criteria">
+            <h3 class="criteria__title">Shape</h3>
+            <div class="criteria__controls" id="shapes">
+              <input class="criteria__checkbox" id="criteria-bell" type="checkbox" checked>
+              <input class="criteria__checkbox" id="criteria-ball" type="checkbox" checked>
+              <input class="criteria__checkbox" id="criteria-cone" type="checkbox" checked>
+              <input class="criteria__checkbox" id="criteria-snowflake" type="checkbox" checked>
+              <input class="criteria__checkbox" id="criteria-toy" type="checkbox" checked>
+              <label class="criteria-control" id="indicator-bell" for="criteria-bell">
+                <img class="criteria-control__img" src="./assets/svg/bell.svg" alt="bell">
+                <p class="criteria-control__name">Bell</p>
+              </label>
+              <label class="criteria-control" id="indicator-ball" for="criteria-ball">
+                <img class="criteria-control__img" src="./assets/svg/ball.svg" alt="bell">
+                <p class="criteria-control__name">Ball</p>
+              </label>
+              <label class="criteria-control" id="indicator-cone" for="criteria-cone">
+                <img class="criteria-control__img" src="./assets/svg/cone.svg" alt="cone">
+                <p class="criteria-control__name">Cone</p>
+              </label>
+              <label class="criteria-control" id="indicator-snowflake" for="criteria-snowflake">
+                <img class="criteria-control__img" src="./assets/svg/snowflake.svg" alt="snowflake">
+                <p class="criteria-control__name">Snowflake</p>
+              </label>
+              <label class="criteria-control" id="indicator-toy" for="criteria-toy">
+                <img class="criteria-control__img" src="./assets/svg/toy.svg" alt="toy">
+                <p class="criteria-control__name">Toy</p>
+              </label>
+            </div>
+          </div>
+          <div class="criteria">
+            <h3 class="criteria__title">Colors</h3>
+            <div class="criteria__controls" id="colors">
+              <input class="criteria__checkbox" id="criteria-white" type="checkbox" checked>
+              <input class="criteria__checkbox" id="criteria-yellow" type="checkbox" checked>
+              <input class="criteria__checkbox" id="criteria-red" type="checkbox" checked>
+              <input class="criteria__checkbox" id="criteria-blue" type="checkbox" checked>
+              <input class="criteria__checkbox" id="criteria-green" type="checkbox" checked>
+              <label class="criteria-control" id="indicator-white" for="criteria-white">
+                <div class="criteria-control__color criteria-control__color_white"></div>
+              </label>
+              <label class="criteria-control" id="indicator-yellow" for="criteria-yellow">
+                <div class="criteria-control__color criteria-control__color_yellow"></div>
+              </label>
+              <label class="criteria-control" id="indicator-red" for="criteria-red">
+                <div class="criteria-control__color criteria-control__color_red"></div>
+              </label>
+              <label class="criteria-control" id="indicator-blue" for="criteria-blue">
+                <div class="criteria-control__color criteria-control__color_blue"></div>
+              </label>
+              <label class="criteria-control" id="indicator-green" for="criteria-green">
+                <div class="criteria-control__color criteria-control__color_green"></div>
+              </label>
+            </div>
+          </div>
+        </div>
         <div class="toys__items"></div>
       </div>
     </section>
