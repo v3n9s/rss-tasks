@@ -5,10 +5,15 @@ async function filterToys() {
     .map((elem) => elem.value);
   const colors = (<HTMLInputElement[]>([...document.querySelectorAll('[name="criteria-color"]:checked')]))
     .map((elem) => elem.value);
+  const amount = {
+    min: +(<HTMLInputElement>document.querySelector('#criteria-amount-min')).value,
+    max: +(<HTMLInputElement>document.querySelector('#criteria-amount-max')).value,
+  };
   const toys = await getToys();
   return toys
     .filter((toy) => shapes.includes(toy.shape))
-    .filter((toy) => colors.includes(toy.color));
+    .filter((toy) => colors.includes(toy.color))
+    .filter((toy) => +toy.count >= amount.min && +toy.count <= amount.max);
 }
 
 async function appendToysToHTML() {
