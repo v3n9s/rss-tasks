@@ -57,7 +57,7 @@ async function appendToysToHTML() {
       <p class="toy__property">is favorite: ${toy.favorite ? 'yes' : 'no'}</p>
     </div>
     `)
-    .join('');
+    .join('') || '<p class="toys__items-placeholder">No toys matching selected criteries</p>';
 
   toysContainer.querySelectorAll('.toy')
     .forEach((toyElem) => {

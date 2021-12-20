@@ -19,4 +19,9 @@
     justify-content: space-between;
     flex: 1 1 auto;
   }
+
+  &__items-placeholder{
+    margin: 20px auto;
+    font-size: 24px;
+  }
 }
