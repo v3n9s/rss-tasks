@@ -68,7 +68,7 @@ class DoubleRangeInput {
   }
 }
 
-const amountRange = new DoubleRangeInput(
+export const amountRange = new DoubleRangeInput(
   <HTMLInputElement>document.querySelector('#criteria-amount-min'),
   <HTMLInputElement>document.querySelector('#criteria-amount-max'),
   <HTMLElement>document.querySelector('#criteria-amount-background'),
@@ -80,7 +80,7 @@ const amountRange = new DoubleRangeInput(
 
 amountRange.renderBackground();
 
-const yearRange = new DoubleRangeInput(
+export const yearRange = new DoubleRangeInput(
   <HTMLInputElement>document.querySelector('#criteria-year-min'),
   <HTMLInputElement>document.querySelector('#criteria-year-max'),
   <HTMLElement>document.querySelector('#criteria-year-background'),

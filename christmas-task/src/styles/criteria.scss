@@ -119,6 +119,10 @@
     pointer-events: none;
     border-radius: 5px;
   }
+
+  &__reset{
+    height: 50px;
+  }
 }
 
 #shapes .criteria-control{

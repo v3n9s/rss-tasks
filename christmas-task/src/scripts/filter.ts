@@ -1,4 +1,5 @@
 import getToys from './downloader';
+import { amountRange, yearRange } from './double-range-input';
 
 async function filterToys() {
   const shapes = (<HTMLInputElement[]>([...document.querySelectorAll('[name="criteria-shape"]:checked')]))
@@ -58,7 +59,34 @@ async function appendToysToHTML() {
     });
 }
 
+function resetFilter() {
+  document.querySelectorAll('[name="criteria-shape"]').forEach((elem) => {
+    (<HTMLInputElement>elem).checked = true;
+  });
+
+  document.querySelectorAll('[name="criteria-color"]').forEach((elem) => {
+    (<HTMLInputElement>elem).checked = true;
+  });
+
+  const amountMin = <HTMLInputElement>document.querySelector('#criteria-amount-min');
+  const amountMax = <HTMLInputElement>document.querySelector('#criteria-amount-max');
+  amountMin.value = amountMin.min;
+  amountMax.value = amountMax.max;
+  amountRange.renderBackground();
+
+  const yearMin = <HTMLInputElement>document.querySelector('#criteria-year-min');
+  const yearMax = <HTMLInputElement>document.querySelector('#criteria-year-max');
+  yearMin.value = yearMin.min;
+  yearMax.value = yearMax.max;
+  yearRange.renderBackground();
+}
+
 document.querySelector('.toys__filters')?.addEventListener('change', () => {
+  appendToysToHTML();
+});
+
+document.querySelector('#criteria-reset')?.addEventListener('click', () => {
+  resetFilter();
   appendToysToHTML();
 });
 
