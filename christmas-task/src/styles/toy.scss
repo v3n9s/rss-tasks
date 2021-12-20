@@ -1,0 +1,27 @@
+.toy{
+  display: flex;
+  margin: 5px;
+  flex: 1 1 200px;
+  flex-direction: column;
+  gap: 15px;
+  min-height: 200px;
+  max-width: 400px;
+  padding: 10px;
+  background-color: #ffffff30;
+  border-radius: 10px;
+
+  &__name{
+    font-size: 24px;
+    font-family: 'Neucha';
+  }
+
+  &__img{
+    max-width: 100px;
+    align-self: center;
+  }
+
+  &__property{
+    font-size: 14px;
+    letter-spacing: 0.5px;
+  }
+}
