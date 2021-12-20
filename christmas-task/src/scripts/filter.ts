@@ -9,11 +9,16 @@ async function filterToys() {
     min: +(<HTMLInputElement>document.querySelector('#criteria-amount-min')).value,
     max: +(<HTMLInputElement>document.querySelector('#criteria-amount-max')).value,
   };
+  const year = {
+    min: +(<HTMLInputElement>document.querySelector('#criteria-year-min')).value,
+    max: +(<HTMLInputElement>document.querySelector('#criteria-year-max')).value,
+  };
   const toys = await getToys();
   return toys
     .filter((toy) => shapes.includes(toy.shape))
     .filter((toy) => colors.includes(toy.color))
-    .filter((toy) => +toy.count >= amount.min && +toy.count <= amount.max);
+    .filter((toy) => +toy.count >= amount.min && +toy.count <= amount.max)
+    .filter((toy) => +toy.year >= year.min && +toy.year <= year.max);
 }
 
 async function appendToysToHTML() {

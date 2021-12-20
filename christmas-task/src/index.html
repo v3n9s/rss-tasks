@@ -85,6 +85,18 @@
             </div>
           </div>
           <div class="criteria">
+            <h3 class="criteria__title">Year bought</h3>
+            <div class="criteria__controls">
+              <p class="criteria-control__min-max" id="criteria-year-min-indicator">1940</p>
+              <div class="criteria-control__range-container">
+                <input class="criteria-control__range criteria-control__range_min" min="1940" max="2020" step="10" value="1940" type="range" id="criteria-year-min">
+                <input class="criteria-control__range criteria-control__range_max" min="1940" max="2020" step="10" value="2020" type="range" id="criteria-year-max">
+                <div class="criteria-control__range-background" id="criteria-year-background"></div>
+              </div>
+              <p class="criteria-control__min-max" id="criteria-year-max-indicator">2020</p>
+            </div>
+          </div>
+          <div class="criteria">
             <h3 class="criteria__title">Colors</h3>
             <div class="criteria__controls" id="colors">
               <input class="criteria__checkbox" id="criteria-white" name="criteria-color" value="белый" type="checkbox" checked>

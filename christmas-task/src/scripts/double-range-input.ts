@@ -79,3 +79,15 @@ const amountRange = new DoubleRangeInput(
 );
 
 amountRange.renderBackground();
+
+const yearRange = new DoubleRangeInput(
+  <HTMLInputElement>document.querySelector('#criteria-year-min'),
+  <HTMLInputElement>document.querySelector('#criteria-year-max'),
+  <HTMLElement>document.querySelector('#criteria-year-background'),
+  {
+    from: <HTMLElement>document.querySelector('#criteria-year-min-indicator'),
+    to: <HTMLElement>document.querySelector('#criteria-year-max-indicator'),
+  },
+);
+
+yearRange.renderBackground();
