@@ -13,15 +13,36 @@
   &__name{
     font-size: 24px;
     font-family: 'Neucha';
+    min-height: 60px;
+  }
+
+  &__img-container{
+    perspective: 200px;
+    align-self: center;
   }
 
   &__img{
     max-width: 100px;
-    align-self: center;
+
+    &_loading{
+      width: 100px;
+      height: 100px;
+      background-color: #aaaaaa60;
+      animation: loading 0.75s linear infinite;
+    }
   }
 
   &__property{
     font-size: 14px;
     letter-spacing: 0.5px;
+  }
+}
+
+@keyframes loading{
+  0%{
+    transform: rotateY(0deg);
+  }
+  100%{
+    transform: rotateY(360deg);
   }
 }
