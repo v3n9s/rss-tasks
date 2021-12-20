@@ -14,12 +14,28 @@ async function filterToys() {
     min: +(<HTMLInputElement>document.querySelector('#criteria-year-min')).value,
     max: +(<HTMLInputElement>document.querySelector('#criteria-year-max')).value,
   };
-  const toys = await getToys();
-  return toys
+  const sort = {
+    property: ['name', 'year'][(<HTMLSelectElement>document.querySelector('#criteria-sort-property')).selectedIndex],
+    method: ['asc', 'desc'][(<HTMLSelectElement>document.querySelector('#criteria-sort-method')).selectedIndex],
+  };
+  let toys = await getToys();
+  toys = toys
     .filter((toy) => shapes.includes(toy.shape))
     .filter((toy) => colors.includes(toy.color))
     .filter((toy) => +toy.count >= amount.min && +toy.count <= amount.max)
-    .filter((toy) => +toy.year >= year.min && +toy.year <= year.max);
+    .filter((toy) => +toy.year >= year.min && +toy.year <= year.max)
+    .sort((a, b) => {
+      if (sort.property === 'name') {
+        for (let i = 0; i < a.name.length || i < b.name.length; i += 1) {
+          if (a.name.charCodeAt(i) - b.name.charCodeAt(i) !== 0) {
+            return a.name.charCodeAt(i) - b.name.charCodeAt(i);
+          }
+        }
+        return a.name.length - b.name.length;
+      }
+      return +a.year - +b.year;
+    });
+  return sort.method === 'asc' ? toys : toys.reverse();
 }
 
 async function appendToysToHTML() {

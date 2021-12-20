@@ -120,6 +120,15 @@
     border-radius: 5px;
   }
 
+  &__sort{
+    display: flex;
+    margin: 0px 5px;
+    flex: 1 1 1px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #192f2d;
+  }
+
   &__reset{
     height: 50px;
   }
