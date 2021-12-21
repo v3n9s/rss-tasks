@@ -1,5 +1,6 @@
 import getToys from './downloader';
 import { amountRange, yearRange } from './double-range-input';
+import loadImage from './image-loading';
 
 async function filterToys() {
   const shapes = (<HTMLInputElement[]>([...document.querySelectorAll('[name="criteria-shape"]:checked')]))
@@ -58,20 +59,17 @@ export default async function appendToysToHTML() {
     </div>
     `)
     .join('') || '<p class="toys__items-placeholder">No toys matching selected criteries</p>';
-
   toysContainer.querySelectorAll('.toy')
     .forEach((toyElem) => {
-      const ind = ((<HTMLElement>toyElem).dataset.toyId ?? '0');
-      const imgContainerElem = toyElem.querySelector('.toy__img-container');
+      const ind = (<HTMLElement>toyElem).dataset.toyId;
       const imgElem = toyElem.querySelector('.toy__img');
-      if (!imgContainerElem || !imgElem) throw new Error('img elem not found');
-      const tempImg = document.createElement('img');
-      tempImg.src = `./assets/toys/${ind}.png`;
-      tempImg.addEventListener('load', () => {
-        (<HTMLImageElement>imgElem).classList.remove('toy__img_loading');
-        (<HTMLImageElement>imgElem).src = tempImg.src;
-        tempImg.remove();
-      });
+      if (!ind) throw new Error('toy ind not found');
+      if (!imgElem) throw new Error('img elem not found');
+      loadImage(`./assets/toys/${ind}.png`)
+        .then((url) => {
+          (<HTMLImageElement>imgElem).classList.remove('toy__img_loading');
+          (<HTMLImageElement>imgElem).src = url;
+        });
     });
 }
 
