@@ -9,6 +9,12 @@
   padding: 10px;
   background-color: #ffffff30;
   border-radius: 10px;
+  transition: transform 0.25s ease;
+
+  &:hover{
+    cursor: pointer;
+    transform: scale(1.025);
+  }
 
   &_favorite{
     background-color: #ffaaaa30;
