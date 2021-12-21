@@ -38,13 +38,13 @@ async function filterToys() {
   return sort.method === 'asc' ? toys : toys.reverse();
 }
 
-async function appendToysToHTML() {
+export default async function appendToysToHTML() {
   const toys = await filterToys();
   const toysContainer = document.querySelector('.toys__items');
   if (!toysContainer) throw new Error('Toys container not found');
   toysContainer.innerHTML = toys
     .map((toy) => `
-    <div class="toy" data-toy-id="${toy.num}">
+    <div class="toy${toy.favorite ? ' toy_favorite' : ''}" data-toy-id="${toy.num}">
       <h4 class="toy__name">${toy.name}</h4>
       <div class="toy__img-container">
         <img class="toy__img toy__img_loading">

@@ -13,5 +13,9 @@ let toys: Promise<IToy[]>;
 
 export default async function getToys() {
   if (!(await toys)?.length) toys = <Promise<IToy[]>><unknown>(await fetch('./assets/data.json')).json();
-  return toys;
+  const favToys = <string[]>JSON.parse(localStorage.getItem('favToys') || '[]');
+  return (await toys).map((toy) => {
+    toy.favorite = favToys.includes(toy.num);
+    return toy;
+  });
 }
