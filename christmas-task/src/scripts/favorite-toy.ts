@@ -1,9 +1,12 @@
 import appendToysToHTML from './filter';
+import showAlert from './custom-alert';
 
 function toggleFavoriteState(toyNum: string) {
   let favToys = <string[]>JSON.parse(localStorage.getItem('favToys') || '[]');
   if (favToys.includes(toyNum)) {
     favToys = favToys.filter((num) => num !== toyNum);
+  } else if (favToys.length === 20) {
+    showAlert('You can\'t add more than 20 toys to favorites');
   } else {
     favToys.push(toyNum);
   }
