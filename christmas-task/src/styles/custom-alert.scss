@@ -1,0 +1,34 @@
+.custom-alert{
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  padding: 0px 20px;
+  max-width: 768px;
+  width: 100%;
+  transform: translateX(-50%);
+  pointer-events: none;
+
+  &__list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+
+  &__item{
+    padding: 5px 10px;
+    font-size: 20px;
+    background-color: #aaaaaadd;
+    border-radius: 3px;
+    animation: 0.5s alert 1s ease forwards;
+  }
+}
+
+@keyframes alert{
+  0%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
