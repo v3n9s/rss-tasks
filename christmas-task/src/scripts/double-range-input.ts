@@ -30,15 +30,15 @@ class DoubleRangeInput {
     };
 
     this.from.addEventListener('input', () => {
-      onInput();
       this.preventEntryToRight();
       this.setHigherZIndexTo(this.from);
+      onInput();
     });
 
     this.to.addEventListener('input', () => {
-      onInput();
       this.preventEntryToLeft();
       this.setHigherZIndexTo(this.to);
+      onInput();
     });
   }
 
