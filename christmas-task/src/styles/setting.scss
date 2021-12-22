@@ -1,0 +1,58 @@
+.setting{
+  display: flex;
+  height: fit-content;
+  gap: 5px;
+  flex-wrap: wrap;
+
+  &__title{
+    flex: 0 0 100%;
+    font-family: "Neucha";
+    font-size: 24px;
+  }
+
+  &__item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    background-color: #ffffff88;
+    border-radius: 10px;
+    perspective: 150px;
+    transition: background-color 0.25s ease, transform 0.25s ease;
+
+    &:hover{
+      cursor: pointer;
+      background-color: #ffffffaa;
+      transform: scale(1.025);
+    }
+  }
+
+  &__img{
+    max-width: 100%;
+    max-height: 100%;
+
+    &_loading{
+      width: 75%;
+      height: 75%;
+      animation: loading 1.25s linear infinite;
+    }
+  }
+}
+
+#setting-tree{
+  max-width: 300px;
+
+  & .setting__item{
+    width: 90px;
+    height: 90px;
+  }
+}
+
+@keyframes loading{
+  0%{
+    transform: rotateY(0deg);
+  }
+  100%{
+    transform: rotateY(360deg);
+  }
+}
