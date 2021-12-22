@@ -1,0 +1,62 @@
+.tree{
+  display: flex;
+  height: 100%;
+  padding: 0px 20px;
+  background-color: #192f2ddd;
+
+  &__column{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 0 0 300px;
+    padding: 10px;
+  }
+
+  &__main{
+    position: relative;
+    display: flex;
+    flex: 1 1 320px;
+    justify-content: center;
+    align-items: center;
+    min-height: 800px;
+    overflow: hidden;
+    border-radius: 5px;
+  }
+
+  &__bg-img{
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+    object-fit: contain;
+  }
+
+  &__img{
+    position: absolute;
+  }
+}
+
+@media (max-width: 1200px){
+  .tree{
+    &__main{
+      min-height: 500px;
+    }
+
+    &__img{
+      max-width: 300px;
+    }
+  }
+}
+
+@media (max-width: 960px){
+  .tree{
+    flex-wrap: wrap;
+  }
+
+  #left-column{
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-basis: 100%;
+  }
+}
