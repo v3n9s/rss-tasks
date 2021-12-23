@@ -4,6 +4,7 @@ interface setting{
   selector: string
   imgUrl: string
   items: string[]
+  action: string
 }
 
 const treeImgElem = <HTMLImageElement>document.querySelector('#tree-img');
@@ -11,15 +12,19 @@ const treeImgElem = <HTMLImageElement>document.querySelector('#tree-img');
 function changeTreeImg(url: string) {
   treeImgElem.src = url;
 }
-
-function addSetting({ selector, imgUrl, items }: setting) {
+function addSetting({
+  selector,
+  imgUrl,
+  items,
+  action,
+}: setting) {
   const container = document.querySelector(selector);
   if (!container) throw new Error(`There is not container for '${selector}' selector`);
   container.append(
     ...items.map((url) => {
       const item = document.createElement('div');
       item.classList.add('setting__item');
-      item.dataset.action = 'tree-img';
+      item.dataset.action = action;
       item.dataset.imgUrl = url;
       const itemImg = document.createElement('img');
       itemImg.classList.add('setting__img');
@@ -46,6 +51,7 @@ const trees: setting = {
     './assets/tree/5.png',
     './assets/tree/6.png',
   ],
+  action: 'tree-img',
 };
 
 addSetting(trees);
