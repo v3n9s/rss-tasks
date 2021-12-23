@@ -1,11 +1,15 @@
 import loadImage from './image-loading';
-import toggleSnowfall from './snowfall';
+import { getSnowfallState, toggleSnowfall } from './snowfall';
 
 interface setting{
   selector: string
   imgUrl: string
   items: string[]
   action: string
+}
+
+interface savedState{
+  [ind: string]: string | boolean
 }
 
 const treeImgElem = <HTMLImageElement>document.querySelector('#tree-img');
@@ -86,19 +90,51 @@ const background: setting = {
 
 addSetting(background);
 
+function renderState() {
+  if (getSnowfallState()) {
+    snowIndicator.classList.add('setting__img_on');
+  } else {
+    snowIndicator.classList.remove('setting__img_on');
+  }
+}
+
+function saveState({
+  key,
+  value,
+}: {
+  key: string
+  value: string | boolean
+}) {
+  const state = <savedState>JSON.parse(localStorage.getItem('tree-settings') ?? '{}');
+  state[key] = value;
+  localStorage.setItem('tree-settings', JSON.stringify(state));
+}
+
+function loadState() {
+  const state = <savedState>JSON.parse(localStorage.getItem('tree-settings') ?? '{}');
+  if ('tree-img' in state) changeTreeImg(<string>state['tree-img']);
+  if ('tree-bg-img' in state) changeBackgroundTreeImg(<string>state['tree-bg-img']);
+  if ('is-snowfall' in state) {
+    toggleSnowfall(<boolean>state['is-snowfall']);
+    renderState();
+  }
+}
+
+loadState();
+
 document.querySelector('.tree')?.addEventListener('click', (event) => {
   const target = <HTMLElement>(<HTMLElement>event.target).closest('[data-action]');
   if (target) {
     if (target.dataset.action === 'tree-img' && target.dataset.imgUrl) {
       changeTreeImg(target.dataset.imgUrl);
+      saveState({ key: 'tree-img', value: target.dataset.imgUrl });
     } else if (target.dataset.action === 'tree-bg-img' && target.dataset.imgUrl) {
       changeBackgroundTreeImg(target.dataset.imgUrl);
+      saveState({ key: 'tree-bg-img', value: target.dataset.imgUrl });
     } else if (target.dataset.action === 'toggle-snow') {
-      if (toggleSnowfall()) {
-        snowIndicator.classList.add('setting__img_on');
-      } else {
-        snowIndicator.classList.remove('setting__img_on');
-      }
+      toggleSnowfall();
+      renderState();
+      saveState({ key: 'is-snowfall', value: getSnowfallState() });
     }
   }
 });
