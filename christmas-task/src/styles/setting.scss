@@ -48,6 +48,15 @@
   }
 }
 
+#setting-background{
+  max-width: 300px;
+
+  & .setting__item{
+    width: 65px;
+    height: 65px;
+  }
+}
+
 @keyframes loading{
   0%{
     transform: rotateY(0deg);
