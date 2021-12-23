@@ -30,12 +30,25 @@
   &__img{
     max-width: 100%;
     max-height: 100%;
+    transition: filter 0.25s ease;
+
+    &_on{
+      filter: drop-shadow(0px 0px 5px #000);
+    }
 
     &_loading{
       width: 75%;
       height: 75%;
       animation: loading 1.25s linear infinite;
     }
+  }
+}
+
+#setting-environment{
+  min-width: 125px;
+
+  & .setting__item{
+    flex: 1 1 1px;
   }
 }
 
@@ -63,5 +76,12 @@
   }
   100%{
     transform: rotateY(360deg);
+  }
+}
+
+@media (max-width: 960px){
+  #setting-environment{
+    max-width: 250px;
+    width: 100%;
   }
 }

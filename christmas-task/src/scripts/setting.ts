@@ -1,4 +1,5 @@
 import loadImage from './image-loading';
+import toggleSnowfall from './snowfall';
 
 interface setting{
   selector: string
@@ -18,6 +19,8 @@ const backgroundImgElem = <HTMLImageElement>document.querySelector('#tree-bg-img
 function changeBackgroundTreeImg(url: string) {
   backgroundImgElem.src = url;
 }
+
+const snowIndicator = <HTMLImageElement>document.querySelector('#snow-indicator');
 
 function addSetting({
   selector,
@@ -90,6 +93,12 @@ document.querySelector('.tree')?.addEventListener('click', (event) => {
       changeTreeImg(target.dataset.imgUrl);
     } else if (target.dataset.action === 'tree-bg-img' && target.dataset.imgUrl) {
       changeBackgroundTreeImg(target.dataset.imgUrl);
+    } else if (target.dataset.action === 'toggle-snow') {
+      if (toggleSnowfall()) {
+        snowIndicator.classList.add('setting__img_on');
+      } else {
+        snowIndicator.classList.remove('setting__img_on');
+      }
     }
   }
 });
