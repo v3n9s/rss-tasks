@@ -32,8 +32,15 @@
     object-fit: contain;
   }
 
-  &__img{
+  &__img-container{
     position: absolute;
+    clip-path: polygon(0% 100%, 0% 60%, 40% 0%, 60% 0%, 100% 55%, 100% 100%);
+  }
+
+  &__img{
+    display: block;
+    max-width: 500px;
+    pointer-events: none;
   }
 }
 
