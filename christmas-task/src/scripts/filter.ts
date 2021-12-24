@@ -2,7 +2,7 @@ import getToys from './downloader';
 import { amountRange, yearRange } from './double-range-input';
 import loadImage from './image-loading';
 
-async function filterToys() {
+export async function filterToys() {
   const shapes = (<HTMLInputElement[]>([...document.querySelectorAll('[name="criteria-shape"]:checked')]))
     .map((elem) => elem.value);
   const colors = (<HTMLInputElement[]>([...document.querySelectorAll('[name="criteria-color"]:checked')]))
@@ -39,7 +39,7 @@ async function filterToys() {
   return sort.method === 'asc' ? toys : toys.reverse();
 }
 
-export default async function appendToysToHTML() {
+export async function appendToysToHTML() {
   const toys = await filterToys();
   const toysContainer = document.querySelector('.toys__items');
   if (!toysContainer) throw new Error('Toys container not found');

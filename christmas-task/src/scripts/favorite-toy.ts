@@ -1,4 +1,4 @@
-import appendToysToHTML from './filter';
+import { appendToysToHTML } from './filter';
 import showAlert from './custom-alert';
 
 function toggleFavoriteState(toyNum: string) {
