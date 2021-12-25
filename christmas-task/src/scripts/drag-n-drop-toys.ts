@@ -14,12 +14,17 @@ export default async function appendDraggableToys() {
   draggableToysContainer.innerHTML = '';
   draggableToysContainer.append(
     ...toys.map((toy) => {
+      const droppedToysAmount = document
+        .querySelector('#tree-img-container')
+        ?.querySelectorAll(`.draggable-toys__img[data-toy-num="${toy.num}"]`)
+        .length ?? 0;
+      const toyCount = +toy.count - droppedToysAmount;
       const toyElem = document.createElement('div');
       toyElem.classList.add('setting__item');
       toyElem.classList.add('draggable-toys__item');
       toyElem.dataset.toyNum = toy.num;
 
-      const images = [...Array<undefined>(+toy.count)].map(() => {
+      const images = [...Array<undefined>(toyCount)].map(() => {
         const toyImgElem = document.createElement('img');
         toyImgElem.classList.add('setting__img');
         toyImgElem.classList.add('draggable-toys__img');
@@ -37,7 +42,7 @@ export default async function appendDraggableToys() {
 
       const toyAmountElem = document.createElement('div');
       toyAmountElem.classList.add('setting__amount');
-      toyAmountElem.innerText = toy.count;
+      toyAmountElem.innerText = `${toyCount}`;
 
       toyElem.append(...images, toyAmountElem);
       return toyElem;
@@ -97,7 +102,9 @@ function dropToy(event: PointerEvent) {
     target.classList.add('setting__img');
     const { toyNum } = target.dataset;
     if (!toyNum) throw new Error('Img doesn\'t have necessary attribute');
-    (<HTMLElement>document.querySelector(`.setting__item[data-toy-num="${toyNum}"]`)).append(target);
+    const imgContainer = <HTMLElement>document.querySelector(`.setting__item[data-toy-num="${toyNum}"]`);
+    if (imgContainer) imgContainer.append(target);
+    else target.remove();
   }
   target.classList.remove('draggable-toys__img_dragging');
   target.removeEventListener('touchmove', preventScroll);
