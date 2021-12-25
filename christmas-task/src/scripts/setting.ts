@@ -1,5 +1,6 @@
 import loadImage from './image-loading';
 import { getSnowfallState, toggleSnowfall } from './snowfall';
+import { getSoundState, toggleSound } from './background-sound';
 
 interface setting{
   selector: string
@@ -25,6 +26,8 @@ function changeBackgroundTreeImg(url: string) {
 }
 
 const snowIndicator = <HTMLImageElement>document.querySelector('#snow-indicator');
+
+const soundIndicator = <HTMLImageElement>document.querySelector('#sound-indicator');
 
 function addSetting({
   selector,
@@ -96,6 +99,13 @@ function renderState() {
   } else {
     snowIndicator.classList.remove('setting__img_on');
   }
+  if (getSoundState()) {
+    soundIndicator.classList.add('setting__img_on');
+    soundIndicator.src = './assets/svg/audio.svg';
+  } else {
+    soundIndicator.classList.remove('setting__img_on');
+    soundIndicator.src = './assets/svg/mute.svg';
+  }
 }
 
 function saveState({
@@ -135,6 +145,19 @@ document.querySelector('.tree')?.addEventListener('click', (event) => {
       toggleSnowfall();
       renderState();
       saveState({ key: 'is-snowfall', value: getSnowfallState() });
+    } else if (target.dataset.action === 'toggle-sound') {
+      toggleSound();
+      renderState();
+      saveState({ key: 'is-sound', value: getSoundState() });
     }
+  }
+});
+
+document.body.addEventListener('click', () => {
+  const state = <savedState>JSON.parse(localStorage.getItem('tree-settings') ?? '{}');
+  const isTreeView = (<HTMLInputElement>document.querySelector('#tree-radio')).checked;
+  if (isTreeView && 'is-sound' in state) {
+    toggleSound(<boolean>state['is-sound']);
+    renderState();
   }
 });
