@@ -9,8 +9,9 @@ async function getToysToDrag() {
   return (favoriteToys.length !== 0 ? favoriteToys : toys).slice(0, 20);
 }
 
-async function appendDraggableToys() {
+export default async function appendDraggableToys() {
   const [toys] = await Promise.all([getToysToDrag(), loadImage('./assets/svg/ball.svg')]);
+  draggableToysContainer.innerHTML = '';
   draggableToysContainer.append(
     ...toys.map((toy) => {
       const toyElem = document.createElement('div');
@@ -43,8 +44,6 @@ async function appendDraggableToys() {
     }),
   );
 }
-
-appendDraggableToys();
 
 function renderToysAmount() {
   draggableToysContainer.querySelectorAll('.draggable-toys__item').forEach((item) => {

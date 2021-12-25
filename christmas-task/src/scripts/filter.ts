@@ -1,6 +1,7 @@
 import getToys from './downloader';
 import { amountRange, yearRange } from './double-range-input';
 import loadImage from './image-loading';
+import appendDraggableToys from './drag-n-drop-toys';
 
 export async function filterToys() {
   const shapes = (<HTMLInputElement[]>([...document.querySelectorAll('[name="criteria-shape"]:checked')]))
@@ -40,6 +41,7 @@ export async function filterToys() {
 }
 
 export async function appendToysToHTML() {
+  appendDraggableToys();
   const toys = await filterToys();
   const toysContainer = document.querySelector('.toys__items');
   if (!toysContainer) throw new Error('Toys container not found');
