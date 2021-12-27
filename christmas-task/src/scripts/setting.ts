@@ -1,6 +1,7 @@
 import loadImage from './image-loading';
 import { getSnowfallState, toggleSnowfall } from './snowfall';
 import { getSoundState, toggleSound } from './background-sound';
+import changeLightsColor from './tree-lights';
 
 interface setting{
   selector: string
@@ -128,6 +129,7 @@ function loadState() {
     toggleSnowfall(<boolean>state['is-snowfall']);
     renderState();
   }
+  if ('lights-color' in state) changeLightsColor(<string>state['lights-color']);
 }
 
 loadState();
@@ -149,6 +151,9 @@ document.querySelector('.tree')?.addEventListener('click', (event) => {
       toggleSound();
       renderState();
       saveState({ key: 'is-sound', value: getSoundState() });
+    } else if (target.dataset.action === 'change-lights-color' && target.dataset.color) {
+      changeLightsColor(target.dataset.color);
+      saveState({ key: 'lights-color', value: target.dataset.color });
     }
   }
 });

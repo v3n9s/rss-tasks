@@ -91,6 +91,12 @@
   }
 }
 
+#lights-color{
+  & .setting__item{
+    flex: 1 1 50px;
+  }
+}
+
 @keyframes loading{
   0%{
     transform: rotateY(0deg);
