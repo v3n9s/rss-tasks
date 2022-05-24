@@ -1,0 +1,559 @@
+/*!
+ *  owfont-regular 1.0.0 by Deniz Fuchidzhiev - http://websygen.com
+ *  License - font: SIL OFL 1.1, css: MIT License
+ */
+/* FONT PATH
+ * -------------------------- */
+@font-face {
+  font-family: 'owfont';
+  src: url('../assets/fonts/owfont-regular.eot?v=1.0.0');
+  src: url('../assets/fonts/owfont-regular.eot?#iefix&v=1.0.0') format('embedded-opentype'),
+	   url('../assets/fonts/owfont-regular.woff') format('woff'),
+	   url('../assets/fonts/owfont-regular.ttf') format('truetype'),
+	   url('../assets/fonts/owfont-regular.svg#owf-regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+.owf {
+  display: inline-block;
+  font: normal normal normal 14px/1 owfont;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transform: translate(0, 0);
+}
+/* makes the font 33% larger relative to the icon container */
+.owf-lg {
+  font-size: 1.33333333em;
+  line-height: 0.75em;
+  vertical-align: -15%;
+}
+.owf-2x {
+  font-size: 2em;
+}
+.owf-3x {
+  font-size: 3em;
+}
+.owf-4x {
+  font-size: 4em;
+}
+.owf-5x {
+  font-size: 5em;
+}
+.owf-fw {
+  width: 1.28571429em;
+  text-align: center;
+}
+.owf-ul {
+  padding-left: 0;
+  margin-left: 2.14285714em;
+  list-style-type: none;
+}
+.owf-ul > li {
+  position: relative;
+}
+.owf-li {
+  position: absolute;
+  left: -2.14285714em;
+  width: 2.14285714em;
+  top: 0.14285714em;
+  text-align: center;
+}
+.owf-li.owf-lg {
+  left: -1.85714286em;
+}
+.owf-border {
+  padding: .2em .25em .15em;
+  border: solid 0.08em #eeeeee;
+  border-radius: .1em;
+}
+.owf-pull-right {
+  float: right;
+}
+.owf-pull-left {
+  float: left;
+}
+.owf.owf-pull-left {
+  margin-right: .3em;
+}
+.owf.owf-pull-right {
+  margin-left: .3em;
+}
+
+/* owfont uses the Unicode Private Use Area (PUA) to ensure screen
+   readers do not read off random characters that represent icons */
+   
+/*   Weather Condition Codes    */
+   
+/*   Thunderstorm - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -    */
+   
+/* thunderstorm with light rain */
+.owf-200:before,
+.owf-200-d:before,
+.owf-200-n:before {
+  content: "\EB28";
+}
+/* thunderstorm with rain */
+.owf-201:before,
+.owf-201-d:before,
+.owf-201-n:before {
+  content: "\EB29";
+}
+/* thunderstorm with heavy rain */
+.owf-202:before,
+.owf-202-d:before,
+.owf-202-n:before {
+  content: "\EB2A";
+}
+/*  light thunderstorm  */
+.owf-210:before,
+.owf-210-d:before,
+.owf-210-n:before {
+  content: "\EB32";
+}
+/*  thunderstorm  */
+.owf-211:before,
+.owf-211-d:before,
+.owf-211-n:before {
+  content: "\EB33";
+}
+/*   heavy thunderstorm   */
+.owf-212:before,
+.owf-212-d:before,
+.owf-212-n:before {
+  content: "\EB34";
+}
+/*   ragged thunderstorm   */
+.owf-221:before,
+.owf-221-d:before,
+.owf-221-n:before {
+  content: "\EB3D";
+}
+/*  thunderstorm with light drizzle    */
+.owf-230:before,
+.owf-230-d:before,
+.owf-230-n:before {
+  content: "\EB46";
+}
+/*  thunderstorm with drizzle     */
+.owf-231:before,
+.owf-231-d:before,
+.owf-231-n:before {
+  content: "\EB47";
+}
+/* thunderstorm with heavy drizzle     */
+.owf-232:before,
+.owf-232-d:before,
+.owf-232-n:before {
+  content: "\EB48";
+}
+
+/*   Drizzle - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -    */
+
+/*  light intensity drizzle */
+.owf-300:before,
+.owf-300-d:before,
+.owf-300-n:before {
+  content: "\EB8C";
+}
+/*  drizzle */
+.owf-301:before,
+.owf-301-d:before,
+.owf-301-n:before {
+  content: "\EB8D";
+}
+/*  heavy intensity drizzle  */
+.owf-302:before,
+.owf-302-d:before,
+.owf-302-n:before {
+  content: "\EB8E";
+}
+/*   light intensity drizzle rain  */
+.owf-310:before,
+.owf-310-d:before,
+.owf-310-n:before {
+  content: "\EB96";
+}
+/*  drizzle rain  */
+.owf-311:before,
+.owf-311-d:before,
+.owf-311-n:before {
+  content: "\EB97";
+}
+/* heavy intensity drizzle rain */
+.owf-312:before,
+.owf-312-d:before,
+.owf-312-n:before {
+  content: "\EB98";
+}
+/* shower rain and drizzle  */
+.owf-313:before,
+.owf-313-d:before,
+.owf-313-n:before {
+  content: "\EB99";
+}
+/* heavy shower rain and drizzle*/
+.owf-314:before,
+.owf-314-d:before,
+.owf-314-n:before {
+  content: "\EB9A";
+}
+/* shower drizzle */
+.owf-321:before,
+.owf-321-d:before,
+.owf-321-n:before {
+  content: "\EBA1";
+}
+
+/*   Rain - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -    */
+
+/* light rain  */
+.owf-500:before,
+.owf-500-d:before,
+.owf-500-n:before {
+  content: "\EC54";
+}
+/* moderate rain  */
+.owf-501:before,
+.owf-501-d:before,
+.owf-501-n:before {
+  content: "\EC55";
+}
+/* heavy intensity rain  */
+.owf-502:before,
+.owf-502-d:before,
+.owf-502-n:before {
+  content: "\EC56";
+}
+/* very heavy rain   */
+.owf-503:before,
+.owf-503-d:before,
+.owf-503-n:before {
+  content: "\EC57";
+}
+/* extreme rain    */
+.owf-504:before,
+.owf-504-d:before,
+.owf-504-n:before {
+  content: "\EC58";
+}
+/* freezing rain    */
+.owf-511:before,
+.owf-511-d:before,
+.owf-511-n:before {
+  content: "\EC5F";
+}
+/*  light intensity shower rain    */
+.owf-520:before,
+.owf-520-d:before,
+.owf-520-n:before {
+  content: "\EC68";
+}
+/* shower rain  */
+.owf-521:before,
+.owf-521-d:before,
+.owf-521-n:before {
+  content: "\EC69";
+}
+/*  heavy intensity shower rain  */
+.owf-522:before,
+.owf-522-d:before,
+.owf-522-n:before {
+  content: "\EC6A";
+}
+/* ragged shower rain  */
+.owf-531:before,
+.owf-531-d:before,
+.owf-531-n:before {
+  content: "\EC73";
+}
+
+/*   Snow - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -    */
+
+/* light snow  */
+.owf-600:before,
+.owf-600-d:before,
+.owf-600-n:before {
+  content: "\ECB8";
+}
+/*  snow  */
+.owf-601:before,
+.owf-601-d:before,
+.owf-601-n:before {
+  content: "\ECB9";
+}
+/*   heavy snow   */
+.owf-602:before,
+.owf-602-d:before,
+.owf-602-n:before {
+  content: "\ECBA";
+}
+/*  sleet  */
+.owf-611:before,
+.owf-611-d:before,
+.owf-611-n:before {
+  content: "\ECC3";
+}
+/*   shower sleet */
+.owf-612:before,
+.owf-612-d:before,
+.owf-612-n:before {
+  content: "\ECC4";
+}
+/* light rain and snow */
+.owf-615:before,
+.owf-615-d:before,
+.owf-615-n:before {
+  content: "\ECC7";
+}
+/* rain and snow  */
+.owf-616:before,
+.owf-616-d:before,
+.owf-616-n:before {
+  content: "\ECC8";
+}
+/* light shower snow  */
+.owf-620:before,
+.owf-620-d:before,
+.owf-620-n:before {
+  content: "\ECCC";
+}
+/* shower snow  */
+.owf-621:before,
+.owf-621-d:before,
+.owf-621-n:before {
+  content: "\ECCD";
+}
+/* heavy shower snow  */
+.owf-622:before,
+.owf-622-d:before,
+.owf-622-n:before {
+  content: "\ECCE";
+}
+
+/*   Atmosphere - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -    */
+
+/* mist */
+.owf-701:before,
+.owf-701-d:before,
+.owf-701-n:before {
+  content: "\ED1D";
+}
+/* smoke */
+.owf-711:before,
+.owf-711-d:before,
+.owf-711-n:before {
+  content: "\ED27";
+}
+/* haze */
+.owf-721:before,
+.owf-721-d:before,
+.owf-721-n:before {
+  content: "\ED31";
+}
+/* Sand/Dust Whirls */
+.owf-731:before,
+.owf-731-d:before,
+.owf-731-n:before {
+  content: "\ED3B";
+}
+/* Fog */
+.owf-741:before,
+.owf-741-d:before,
+.owf-741-n:before {
+  content: "\ED45";
+}
+/* sand */
+.owf-751:before,
+.owf-751-d:before,
+.owf-751-n:before {
+  content: "\ED4F";
+}
+/* dust */
+.owf-761:before,
+.owf-761-d:before,
+.owf-761-n:before {
+  content: "\ED59";
+}
+/*  VOLCANIC ASH  */
+.owf-762:before,
+.owf-762-d:before,
+.owf-762-n:before {
+  content: "\ED5A";
+}
+/* SQUALLS */
+.owf-771:before,
+.owf-771-d:before,
+.owf-771-n:before {
+  content: "\ED63";
+}
+/* TORNADO */
+.owf-781:before,
+.owf-781-d:before,
+.owf-781-n:before {
+  content: "\ED6D";
+}
+
+/*   Clouds - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -    */
+
+/*  sky is clear  */  /*  Calm  */
+.owf-800:before,
+.owf-800-d:before,
+.owf-951:before,
+.owf-951-d:before {
+  content: "\ED80";
+}
+.owf-800-n:before,
+.owf-951-n:before {
+  content: "\F168";
+}
+/*  few clouds   */
+.owf-801:before,
+.owf-801-d:before {
+  content: "\ED81";
+}
+.owf-801-n:before {
+  content: "\F169";
+}
+/* scattered clouds */
+.owf-802:before,
+.owf-802-d:before {
+  content: "\ED82";
+}
+.owf-802-n:before {
+  content: "\F16A";
+}
+/* broken clouds  */
+.owf-803:before,
+.owf-803-d:before,
+.owf-803-n:before {
+  content: "\ED83";
+}
+/* overcast clouds  */
+.owf-804:before,
+.owf-804-d:before,
+.owf-804-n:before {
+  content: "\ED84";
+}
+
+/*   Extreme - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -    */
+
+/* tornado  */
+.owf-900:before,
+.owf-900-d:before,
+.owf-900-n:before {
+  content: "\EDE4";
+}
+/*  tropical storm  */
+.owf-901:before,
+.owf-901-d:before,
+.owf-901-n:before {
+  content: "\EDE5";
+}
+/* hurricane */
+.owf-902:before,
+.owf-902-d:before,
+.owf-902-n:before {
+  content: "\EDE6";
+}
+/* cold */
+.owf-903:before,
+.owf-903-d:before,
+.owf-903-n:before {
+  content: "\EDE7";
+}
+/* hot */
+.owf-904:before,
+.owf-904-d:before,
+.owf-904-n:before {
+  content: "\EDE8";
+}
+/* windy */
+.owf-905:before,
+.owf-905-d:before,
+.owf-905-n:before {
+  content: "\EDE9";
+}
+/* hail */
+.owf-906:before,
+.owf-906-d:before,
+.owf-906-n:before {
+  content: "\EDEA";
+}
+
+/*   Additional - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -    */
+
+/* Setting */
+.owf-950:before,
+.owf-950-d:before,
+.owf-950-n:before {
+  content: "\EE16";
+}
+/*  Light breeze  */
+.owf-952:before,
+.owf-952-d:before,
+.owf-952-n:before {
+  content: "\EE18";
+}
+/*  Gentle Breeze  */
+.owf-953:before,
+.owf-953-d:before,
+.owf-953-n:before {
+  content: "\EE19";
+}
+/*  Moderate breeze  */
+.owf-954:before,
+.owf-954-d:before,
+.owf-954-n:before {
+  content: "\EE1A";
+}
+/* Fresh Breeze  */
+.owf-955:before,
+.owf-955-d:before,
+.owf-955-n:before {
+  content: "\EE1B";
+}
+/* Strong  Breeze  */
+.owf-956:before,
+.owf-956-d:before,
+.owf-956-n:before {
+  content: "\EE1C";
+}
+/* High wind, near gale  */
+.owf-957:before,
+.owf-957-d:before,
+.owf-957-n:before {
+  content: "\EE1D";
+}
+/* Gale */
+.owf-958:before,
+.owf-958-d:before,
+.owf-958-n:before {
+  content: "\EE1E";
+}
+/*  Severe Gale  */
+.owf-959:before,
+.owf-959-d:before,
+.owf-959-n:before {
+  content: "\EE1F";
+}
+/* Storm */
+.owf-960:before,
+.owf-960-d:before,
+.owf-960-n:before {
+  content: "\EE20";
+}
+/*  Violent Storm  */
+.owf-961:before,
+.owf-961-d:before,
+.owf-961-n:before {
+  content: "\EE21";
+}
+/* Hurricane */
+.owf-962:before,
+.owf-962-d:before,
+.owf-962-n:before {
+  content: "\EE22";
+}
+*{margin:0px;padding:0px;box-sizing:border-box;background:transparent;border:0px;outline:0px}@font-face{font-family:"Arial-MT";src:url("../assets/fonts/Arial-MT.woff")}body{font-family:"Arial"}.toggle-modules__checkbox{display:none}.datetime-and-greeting{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);display:flex;flex-direction:column;gap:20px;width:100%;color:#fff}.datetime{display:flex;flex-direction:column;align-items:center}.datetime__time{font-family:"Arial-MT";font-size:100px;opacity:0;pointer-events:none;transition:opacity .5s ease}#time-toggle:checked~.datetime-and-greeting .datetime__time{opacity:1;pointer-events:all}.datetime__date{font-size:24px;opacity:0;pointer-events:none;transition:opacity .5s ease}#date-toggle:checked~.datetime-and-greeting .datetime__date{opacity:1;pointer-events:all}.greeting{display:flex;justify-content:center;gap:15px;opacity:0;pointer-events:none;transition:opacity .5s ease}#greeting-toggle:checked~.datetime-and-greeting .greeting{opacity:1;pointer-events:all}.greeting__phrase{width:50%;text-align:right;font-size:40px}.greeting__name{width:50%;font-size:40px;color:#fff}.greeting__name::-webkit-input-placeholder{color:#fff;opacity:.75;transition:opacity .25s ease}.greeting__name:focus::-webkit-input-placeholder{opacity:0}.slider__container{position:absolute;top:0px;left:0px;width:100%;height:100%;overflow:hidden;filter:brightness(0.75);transition:filter 1s ease}.slider__container_loading{filter:brightness(0.25)}.slider__image{position:absolute;top:0px;left:0px;width:100%;height:100%;object-fit:cover;object-position:center;opacity:0}.slider-controls{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);display:flex;justify-content:space-between;width:100%}.slider-controls__prev-slide,.slider-controls__next-slide{display:flex;width:64px;height:64px;transition:opacity .5s ease}.slider-controls__prev-slide:hover,.slider-controls__next-slide:hover{cursor:pointer;opacity:.75}.slider-controls__prev-slide img,.slider-controls__next-slide img{filter:drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.75))}.slider-controls__prev-slide img{transform:rotateY(180deg)}@keyframes showImage{0%{opacity:0}100%{opacity:1}}.settings{position:absolute;width:100vw;height:100vh;pointer-events:none}.settings__input-toggle{display:none}.settings__icon{position:absolute;bottom:0px;left:0px;margin:0px 0px 10px 10px;display:block;width:64px;height:64px;background-image:url("../assets/svg/gear.svg");background-size:cover;transition:background-image .25s ease;pointer-events:all;z-index:3}.settings__input-toggle:checked~.settings__icon{background-image:url("../assets/svg/gear-fill.svg")}.settings__icon:hover{cursor:pointer}.settings__overlay{position:absolute;top:0px;left:0px;display:none;width:100%;height:100%;pointer-events:none}.settings__input-toggle:checked~.settings__overlay{display:block;pointer-events:all}.settings-menu{position:absolute;bottom:100px;left:-400px;display:flex;flex-direction:column;gap:5px;width:600px;padding:10px;background:rgba(10,10,10,.9);opacity:0;pointer-events:none;transition:left .25s ease,opacity .25s ease}.settings__input-toggle:checked~.settings-menu{left:10px;opacity:1;pointer-events:auto}.settings-menu__single-select{display:flex;width:100%}.settings-menu__input{display:none}.settings-menu__label{display:flex;flex:1 1 1px;justify-content:center;align-items:center;height:30px;color:#fff;transition:background-color .2s ease}input:checked+.settings-menu__label{background-color:#5a90ff}.settings-menu__label:hover{cursor:pointer}.settings-menu__module-label{display:flex;flex:1 1 auto;justify-content:center;align-items:center;height:30px;color:#fff;border:1px solid #5a90ff;transition:background-color .2s ease}.settings-menu__module-label:hover{cursor:pointer}#time-toggle:checked~.settings #time-toggle-label,#date-toggle:checked~.settings #date-toggle-label,#greeting-toggle:checked~.settings #greeting-toggle-label,#quotes-toggle:checked~.settings #quotes-toggle-label,#audio-player-toggle:checked~.settings #audio-player-toggle-label,#weather-toggle:checked~.settings #weather-toggle-label{background-color:#5a90ff}.weather{position:absolute;top:10px;right:10px;width:300px;opacity:0;pointer-events:none;transition:opacity .5s ease}#weather-toggle:checked~.weather{opacity:1;pointer-events:all}.weather__input{padding-left:2px;width:100%;border-bottom:1px solid #fff;font-size:30px;line-height:140%;color:#fff}.weather__input::-webkit-input-placeholder{color:#fff;opacity:.75;transition:opacity .25s ease}.weather__input:focus::-webkit-input-placeholder{opacity:0}.weather__info-container{margin-top:5px;display:flex;flex-direction:column;gap:5px;font-size:24px;color:#fff}.weather__icon{font-size:36px}.weather__description{text-transform:capitalize}.quotes{position:absolute;top:0px;left:0px;width:100%;height:100%;pointer-events:none;opacity:0;transition:opacity .5s ease}#quotes-toggle:checked~.quotes{opacity:1}.quotes>*{pointer-events:all}.quotes__container{position:absolute;bottom:10px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:10px;width:400px;color:#fff}.quotes__controls{display:flex;width:100%;justify-content:space-between;pointer-events:all}.quotes__icon{width:32px;height:32px}.quotes__icon:hover{cursor:pointer}.quotes__text{font-size:16px;flex:0 0 60px;text-align:center}.quotes__author{font-size:24px}.quotes__checkbox{display:none}.quotes__modal{position:absolute;top:-400px;left:50%;transform:translateX(-50%);z-index:5;width:600px;min-height:400px;max-height:800px;padding:10px;background-color:rgba(10,10,10,.9);opacity:0;overflow-y:auto;transition:top .5s ease,opacity .5s ease}.quotes__checkbox:checked~.quotes__modal{top:50px;opacity:1}.quotes__overlay{position:absolute;top:0px;left:0px;z-index:4;width:100%;height:100%;background-color:#0a0a0a;pointer-events:none;opacity:0;transition:opacity .5s ease}.quotes__checkbox:checked~.quotes__overlay{pointer-events:all;opacity:.25}.quotes-list{display:flex;flex-direction:column;width:100%;height:100%;list-style:none;color:#fff}.quotes-list__item{margin:5px 0px 0px 0px;display:flex;align-items:center;padding:0px 0px 5px 0px;gap:5px;border-bottom:1px solid #fff}.quotes-list__item:last-of-type{border:0px}.quotes-list__author{font-size:18px;min-width:160px}.quotes-list__text{font-size:18px}.quotes-list__delete{width:28px;height:28px}.audio-player{position:absolute;top:10px;left:10px;width:175px;opacity:0;pointer-events:none;transition:opacity .5s ease}#audio-player-toggle:checked~.audio-player{opacity:1;pointer-events:all}.audio-player__name{text-align:center;font-size:20px;color:#fff}.audio-player__progress{width:100%}.audio-player__time{text-align:center;font-size:18px;color:#fff}.audio-player__volume{display:flex;align-items:center;gap:5px}.audio-player__volume-toggle{width:32px;height:32px}.audio-player__volume-toggle:hover{cursor:pointer}.audio-player__volume-level{flex-grow:1}.audio-player-controls{display:flex;justify-content:space-between}.audio-player-controls__icon{width:48px;height:48px}.audio-player-controls__icon:hover{cursor:pointer}.play-list{margin-top:5px;display:flex;flex-direction:column;list-style:none;color:#fff}.play-list__item{padding:2px 0px 2px 25px;transition:filter .25s ease}.play-list__item:hover{cursor:pointer}.play-list__play-pause{position:absolute;left:0px;transform:translateY(-2px);width:20px;height:20px;background-image:url("../assets/svg/play.svg");background-size:cover;pointer-events:none}
